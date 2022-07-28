@@ -214,7 +214,13 @@
 
         <!--/contact_info-->
 
-        <div class="bg_color_1">
+        <div class="bg_color_1 position-relative">
+          <div class="contact-bg-img d-none">
+            <img src="./img/contact-us-background.png" alt="" />
+          </div>
+          <div class="contact-bg-img-mobile d-none">
+            <img src="./img/contact-us-background-mobile.png" alt="" />
+          </div>
           <div class="container margin_80_55">
             <div class="row justify-content-center">
               <!-- <div class="col-lg-5">
@@ -543,6 +549,13 @@
         var afterVideoSection = $("#menu").offset().top;
 
         $(".animate-form").fadeTo(1500, 1);
+        if (window.matchMedia("(max-width: 767px)").matches) {
+          $(".contact-bg-img").addClass("d-none");
+          $(".contact-bg-img-mobile").addClass("d-block");
+        } else {
+          $(".contact-bg-img").removeClass("d-none");
+          $(".contact-bg-img-mobile").addClass("d-none");
+        }
       });
       videojs("my-video").ready(function () {
         this.play();
