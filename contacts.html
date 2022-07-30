@@ -211,15 +211,28 @@
           <div class="contact-bg-img-mobile d-none">
             <img src="./img/contact-us-background-mobile.png" alt="" />
           </div> -->
-          <video autoplay muted id="myVideo" class="video-bg d-none d-md-block">
-            <source src="./video/Starting.mp4" type="video/mp4" />
+          <video
+            autoplay="autoplay"
+            playsinline=""
+            data-wf-ignore="true"
+            muted
+            id="myVideo"
+            class="video-bg d-none d-md-block"
+          >
+            <source
+              src="https://lifewithoreilly.com/video/Starting.mp4"
+              data-wf-ignore="true"
+            />
             Your browser does not support HTML5 video.
           </video>
           <video
             autoplay
             muted
+            playsinline
             id="myVideoMobile"
             class="video-bg d-block d-md-none"
+            src="./video/mobile-view.mp4"
+            type="video/mp4"
           >
             <source src="./video/mobile-view.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
