@@ -107,7 +107,7 @@
   <style></style>
 
   <body class="datepicker_mobile_full">
-    <div
+    <!-- <div
       class="modal fadeIn bg-dark"
       id="myModal"
       tabindex="-1"
@@ -117,16 +117,6 @@
       <div class="modal-dialog-full-width modal-fluid" role="document">
         <div class="modal-content-full-width">
           <div class="modal-body-full-width">
-            <!-- <div
-              id="my-video"
-              class="jarallax VideoWorker"
-              media="(max-width: 400px)"
-              data-jarallax-video="https://www.youtube.com/watch?v=V4jplZycwbc"
-            >
-              <div class="wrapper" style="background-color: rgba(0, 0, 0, 0.5)">
-                <div class="container"></div>
-              </div>
-            </div> -->
             <video
               id="my-video"
               class="video-js vjs-default-skin video-bg"
@@ -156,7 +146,7 @@
           ></button>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="page">
       <header class="header menu_fixed header-white">
         <div id="logo">
@@ -215,12 +205,16 @@
         <!--/contact_info-->
 
         <div class="bg_color_1 position-relative">
-          <div class="contact-bg-img d-none">
+          <!-- <div class="contact-bg-img d-none">
             <img src="./img/contact-us-background.png" alt="" />
           </div>
           <div class="contact-bg-img-mobile d-none">
             <img src="./img/contact-us-background-mobile.png" alt="" />
-          </div>
+          </div> -->
+          <video autoplay muted id="myVideo" class="video-bg">
+            <source src="Starting.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
           <div class="container margin_80_55">
             <div class="row justify-content-center">
               <!-- <div class="col-lg-5">
@@ -229,7 +223,7 @@
               </div>
               /map
             </div> -->
-              <div class="col-lg-7 animate animate-form">
+              <div class="col-lg-7 animate animate-form pt-2 mt-md-4">
                 <h4 class="text-white font-papyrus">How can we help?</h4>
                 <div id="message-contact"></div>
                 <form
@@ -542,20 +536,14 @@
 
         $("#myModal").modal("show");
       }
-      var myPlayer = videojs("my-video");
+      var myPlayer = videojs("myVideo");
 
       myPlayer.on("ended", function () {
         $(".trigger").click();
         var afterVideoSection = $("#menu").offset().top;
 
         $(".animate-form").fadeTo(1500, 1);
-        if (window.matchMedia("(max-width: 767px)").matches) {
-          $(".contact-bg-img").addClass("d-none");
-          $(".contact-bg-img-mobile").addClass("d-block");
-        } else {
-          $(".contact-bg-img").removeClass("d-none");
-          $(".contact-bg-img-mobile").addClass("d-none");
-        }
+        $(".animate-form").addClass("scale-transition");
       });
       videojs("my-video").ready(function () {
         this.play();

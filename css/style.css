@@ -13,6 +13,26 @@
 .bg_color_1 {
   background-color: #000;
 }
+.fade-custom {
+  -webkit-transition: all 0.3s linear !important ;
+  -o-transition: all 0.3s linear !important ;
+  transition: all 0.3s linear !important ;
+  transform: scale(0) !important ;
+}
+.fade.in {
+  transform: scale(1) !important ;
+}
+
+.video-bg {
+  position: absolute;
+  inset: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.video-bg video {
+  min-width: 100%;
+  min-height: 100%;
+}
 
 .contact-bg-img {
   position: absolute;
@@ -26,7 +46,24 @@
 .contact-bg-img img {
   width: 100%;
 }
+.bg_color_1 {
+  overflow: hidden;
+}
 
+.scale-transition {
+  -webkit-animation: scale 2s ease-out;
+  -moz-animation: scale 2s ease-out;
+  -o-animation: scale 2s ease-out;
+  animation: scale 2s ease-out;
+}
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .contact-bg-img-mobile {
   position: absolute;
   inset: 0;
