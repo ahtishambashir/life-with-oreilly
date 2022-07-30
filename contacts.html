@@ -211,8 +211,17 @@
           <div class="contact-bg-img-mobile d-none">
             <img src="./img/contact-us-background-mobile.png" alt="" />
           </div> -->
-          <video autoplay muted id="myVideo" class="video-bg">
-            <source src="Starting.mp4" type="video/mp4" />
+          <video autoplay muted id="myVideo" class="video-bg d-none d-md-block">
+            <source src="./video/Starting.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <video
+            autoplay
+            muted
+            id="myVideoMobile"
+            class="video-bg d-block d-md-none"
+          >
+            <source src="./video/mobile-view.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
           <div class="container margin_80_55">
@@ -502,7 +511,7 @@
     <script src="js/mapmarker.jquery.js"></script>
     <script src="js/mapmarker_func.jquery.js"></script>
     <!-- video js -->
-    <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <!-- <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script> -->
     <script>
       // var options = {};
 
@@ -527,26 +536,46 @@
       $("#first_integer").val(number1);
       $("#second_integer").val(number2);
 
+      // $(document).ready(function () {
+      //   changeVideo("OMDJY6Fh9YY");
+      // });
+
+      // function changeVideo(vId) {
+      //   var iframe = document.getElementById("my-video");
+
+      //   $("#myModal").modal("show");
+      // }
+      // var myPlayer = videojs("myVideo");
+
+      // myPlayer.on("ended", function () {
+      //   $(".trigger").click();
+      //   var afterVideoSection = $("#menu").offset().top;
+
+      //   $(".animate-form").fadeTo(1500, 1);
+      //   $(".animate-form").addClass("scale-transition");
+      // });
+      // videojs("my-video").ready(function () {
+      //   this.play();
+      // });
+
+      // $("#myVideo")
+      //   .get(0)
+      //   .end(function () {
+      //     $(".animate-form").fadeTo(1500, 1);
+      //     $(".animate-form").addClass("scale-transition");
+      //   });
+
       $(document).ready(function () {
-        changeVideo("OMDJY6Fh9YY");
+        $("#myVideo").on("ended", function () {
+          $(".animate-form").fadeTo(1500, 1);
+          $(".animate-form").addClass("scale-transition");
+        });
       });
-
-      function changeVideo(vId) {
-        var iframe = document.getElementById("my-video");
-
-        $("#myModal").modal("show");
-      }
-      var myPlayer = videojs("myVideo");
-
-      myPlayer.on("ended", function () {
-        $(".trigger").click();
-        var afterVideoSection = $("#menu").offset().top;
-
-        $(".animate-form").fadeTo(1500, 1);
-        $(".animate-form").addClass("scale-transition");
-      });
-      videojs("my-video").ready(function () {
-        this.play();
+      $(document).ready(function () {
+        $("#myVideoMobile").on("ended", function () {
+          $(".animate-form").fadeTo(1500, 1);
+          $(".animate-form").addClass("scale-transition");
+        });
       });
       // $("vide").show().delay(10000).fadeOut();
     </script>
